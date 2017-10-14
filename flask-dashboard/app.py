@@ -9,15 +9,20 @@ firebase = firebase.FirebaseApplication('https://npcompete-54f8f.firebaseio.com'
 @app.route('/')
 def main():
     name = "Courtney"
-    return render_template(
-        'index.html',**locals())
+    return render_template('index.html', **locals())
 
 
-@app.route('/getData')
+@app.route('/recipes')
 def index():
     result = firebase.get('/recipes', None)
     print(result)
     return json.dumps(result)
+
+@app.route('/recipes/<string:recipe>')
+def getRecipe(recipe):
+    #things
+    pass
+    return json.dumps("pretend this is a recipe named " + recipe)
 
 if __name__ == "__main__":
     app.run(debug = True)
