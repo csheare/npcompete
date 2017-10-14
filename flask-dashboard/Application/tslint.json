@@ -1,0 +1,12 @@
+{
+    "extends": [
+        "tslint:latest",
+        "tslint-react"
+    ],
+    "rules": {
+        "no-unused-variable": [
+            true,
+            "react"
+        ]
+    }
+}

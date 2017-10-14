@@ -1,0 +1,13 @@
+body {
+    background-color: white;
+    margin: 0em;
+}
+.mainContent {
+    background-color: white;
+    -moz-box-shadow:    0em 0em .5em 0em #ddd;
+    -webkit-box-shadow: 0em 0em .5em 0em #ddd;
+    box-shadow:         0em 0em .5em 0em #ddd;
+}
+.searchBar {
+    
+}

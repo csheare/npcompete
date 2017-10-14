@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "jsx": "react",
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        "sourceMap": true,
+        "types": [
+            "node"
+        ]
+        
+    },
+    "exclude": [
+        "node_modules"
+    ],
+    "files": [
+        "config/webpack.config.ts"
+    ]
+}   
