@@ -48,7 +48,9 @@ export default class WebView extends React.Component {
         return (
             <div>
                 <TheSearchBar parent={this} />
-                <MainResult recipeName={this.state.queryString} />
+                <div className = "sidebar"> 
+                  <MainResult recipeName={this.state.queryString} />
+                </div>
             </div>
         )
     }

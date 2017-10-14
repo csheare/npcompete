@@ -27393,7 +27393,7 @@ var TheSearchBar = /** @class */ (function (_super) {
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_material_ui_search_bar___default.a, { placeholder: "Search a Recipe!", id: "searchBar", className: "search", onChange: function (value) { _this.setState({ searchValue: value }); }, onRequestSearch: function () { _this.searchWasRequested(); }, style: {
                     margin: '4em auto',
                     maxWidth: 800,
-                    backgroundColor: 'yellow'
+                    backgroundColor: 'beige'
                 } })));
     };
     return TheSearchBar;
@@ -27408,7 +27408,8 @@ var WebView = /** @class */ (function (_super) {
     WebView.prototype.render = function () {
         return (__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", null,
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(TheSearchBar, { parent: this }),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__MainResult_Component__["a" /* default */], { recipeName: this.state.queryString })));
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", { className: "sidebar" },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__MainResult_Component__["a" /* default */], { recipeName: this.state.queryString }))));
     };
     return WebView;
 }(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component));
