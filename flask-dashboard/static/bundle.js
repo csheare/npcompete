@@ -27408,8 +27408,7 @@ var WebView = /** @class */ (function (_super) {
     WebView.prototype.render = function () {
         return (__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", null,
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(TheSearchBar, { parent: this }),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", { className: "sidebar" },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__MainResult_Component__["a" /* default */], { recipeName: this.state.queryString }))));
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__MainResult_Component__["a" /* default */], { recipeName: this.state.queryString })));
     };
     return WebView;
 }(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component));
