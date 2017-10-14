@@ -27389,10 +27389,12 @@ var TheSearchBar = /** @class */ (function (_super) {
     };
     TheSearchBar.prototype.render = function () {
         var _this = this;
-        return (__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_material_ui_search_bar___default.a, { onChange: function (value) { _this.setState({ searchValue: value }); }, onRequestSearch: function () { _this.searchWasRequested(); }, style: {
-                margin: '4em auto',
-                maxWidth: 800
-            } }));
+        return (__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", { className: ".searchContainer" },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_material_ui_search_bar___default.a, { placeholder: "Search a Recipe!", id: "searchBar", className: "search", onChange: function (value) { _this.setState({ searchValue: value }); }, onRequestSearch: function () { _this.searchWasRequested(); }, style: {
+                    margin: '4em auto',
+                    maxWidth: 800,
+                    backgroundColor: 'yellow'
+                } })));
     };
     return TheSearchBar;
 }(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component));

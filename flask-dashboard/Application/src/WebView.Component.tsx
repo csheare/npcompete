@@ -20,6 +20,7 @@ class TheSearchBar extends React.Component<SearchBarProps> {
         return (
             <div className=".searchContainer">
                 <SearchBar
+                    placeholder = "Search a Recipe!"
                     id="searchBar"
                     className="search"
                     onChange={(value) => { this.setState({ searchValue: value }) }}
@@ -27,7 +28,7 @@ class TheSearchBar extends React.Component<SearchBarProps> {
                     style={{
                         margin: '4em auto',
                         maxWidth: 800,
-                        backgroundColor: 'yellow'
+                        backgroundColor: 'beige'
                     }}
                 />
             </div>
