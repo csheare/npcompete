@@ -3,6 +3,7 @@ import SearchBar from 'material-ui-search-bar';
 import MainResult from './MainResult.Component';
 
 
+
 interface SearchBarProps {
     parent: React.Component
 }
@@ -48,9 +49,9 @@ export default class WebView extends React.Component {
         return (
             <div>
                 <TheSearchBar parent={this} />
-                <div className = "sidebar"> 
+            <div id="searchResult">
                   <MainResult recipeName={this.state.queryString} />
-                </div>
+            </div>
             </div>
         )
     }

@@ -3,8 +3,20 @@ body{
     text-align: center;
 }
 h1{
-    font-family: 'Amatic SC', cursive;
+    font-family: 'Homemade Apple', cursive !important;
     font-weight: normal;
     color: #8ac640;
     font-size: 2.5em;
+}
+
+#center{
+  align-content: center !important;
+}
+main{
+  margin: 0 !important;
+}
+
+#searchResult{
+  margin:50px;
+
 }
