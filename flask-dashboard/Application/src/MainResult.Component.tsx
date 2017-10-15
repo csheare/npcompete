@@ -9,6 +9,13 @@ export interface MainResultContainer {
     recipeName: string;
 }
 
+function setOne(index, url, name) {
+  document.getElementById("name" + index).innerHTML = name;
+  let img = document.getElementById("image" + index);
+  img['src'] = url;
+
+}
+
 
 export default class MainResult extends React.Component<MainResultContainer> {
 
@@ -24,15 +31,23 @@ export default class MainResult extends React.Component<MainResultContainer> {
             .then(res => {
                 //const posts = res.data.data.map(obj => obj.data);
                 console.log(res);
-                let ingredients = "Ingredients: "
+                // let ingredients = "Ingredients: "
                 // for (let property in res.data["ingredients"]) {
                 //   ingredients += property +" "+ res.data["ingredients"][property]['count'] + ", ";
                 // }
                 // if (ingredients.length > 0) {
                 //   ingredients = ingredients.slice(0, ingredients.length - 1);
                 // }
-                this.setState({ directions: "Directions: " + res.data["directions"], ingredients: "Ingredients: " + res.data["ingredients"]["text"], image: "" + res.data["image"] });
 
+              if(res.data !== undefined){
+                for (let i = 1; i <= 8; i++) {
+                   if (res.data["r" + i] !== undefined) {
+                     const ele = res.data["r" + i];
+                     setOne(i, ele["image-ref"], ele["name"])
+                   }
+                 }
+              }
+                this.setState({ directions: "Directions: " + res.data["directions"], ingredients: "Ingredients: " + res.data["ingredients"]["text"], image: "" + res.data["image"] });
             });
     }
 

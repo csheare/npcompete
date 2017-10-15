@@ -36072,6 +36072,11 @@ var __extends = (this && this.__extends) || (function () {
 
 
 
+function setOne(index, url, name) {
+    document.getElementById("name" + index).innerHTML = name;
+    var img = document.getElementById("image" + index);
+    img['src'] = url;
+}
 var MainResult = /** @class */ (function (_super) {
     __extends(MainResult, _super);
     function MainResult(props) {
@@ -36085,6 +36090,21 @@ var MainResult = /** @class */ (function (_super) {
             .then(function (res) {
             //const posts = res.data.data.map(obj => obj.data);
             console.log(res);
+            // let ingredients = "Ingredients: "
+            // for (let property in res.data["ingredients"]) {
+            //   ingredients += property +" "+ res.data["ingredients"][property]['count'] + ", ";
+            // }
+            // if (ingredients.length > 0) {
+            //   ingredients = ingredients.slice(0, ingredients.length - 1);
+            // }
+            if (res.data !== undefined) {
+                for (var i = 1; i <= 8; i++) {
+                    if (res.data["r" + i] !== undefined) {
+                        var ele = res.data["r" + i];
+                        setOne(i, ele["image-ref"], ele["name"]);
+                    }
+                }
+            }
             _this.setState({ directions: "Directions: " + res.data["directions"], ingredients: "Ingredients: " + res.data["ingredients"]["text"], image: "" + res.data["image"] });
         });
     };
