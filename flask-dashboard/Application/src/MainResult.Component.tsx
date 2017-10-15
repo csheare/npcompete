@@ -1,6 +1,8 @@
 import React from 'react';
-import Card from 'material-ui';
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import axios from 'axios';
+import FlatButton from 'material-ui/FlatButton';
+
 
 
 export interface MainResultContainer {
@@ -33,18 +35,21 @@ export default class MainResult extends React.Component<MainResultContainer> {
     }
 
     render() {
-        return this.props.recipeName.length == 0 ?
-            (
-                <p>
-                    {this.state.searchResult}
-                </p>
-            )
-            :
-            (
-                <div>
-                    <h2>Search Results for {this.props.recipeName}</h2>
-                    <p>{this.state.searchResult}</p>
-                </div>
+        return(
+              <Card
+                style={{
+                    margin: '4em auto',
+                    maxWidth: 650
+                }}
+              >
+                <CardMedia>
+                  <img src="../static/assets/images/img-12.jpg" alt="" />
+                </CardMedia>
+                <CardTitle title= {this.props.recipeName} />
+                <CardText>
+                  {this.state.searchResult}
+                </CardText>
+              </Card>
             );
     }
 }
