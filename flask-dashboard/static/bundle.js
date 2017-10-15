@@ -36076,7 +36076,7 @@ var MainResult = /** @class */ (function (_super) {
     __extends(MainResult, _super);
     function MainResult(props) {
         var _this = _super.call(this, props) || this;
-        _this.state = { searchResult: "none" };
+        _this.state = { directions: "none", ingredients: "none", image: "../static/assets/images/img-12.jpg" };
         return _this;
     }
     MainResult.prototype.doSearch = function (recipeName) {
@@ -36085,7 +36085,7 @@ var MainResult = /** @class */ (function (_super) {
             .then(function (res) {
             //const posts = res.data.data.map(obj => obj.data);
             console.log(res);
-            _this.setState({ searchResult: "" + res.data });
+            _this.setState({ directions: "Directions: " + res.data["directions"], ingredients: "Ingredients: " + res.data["ingredients"]["text"], image: "" + res.data["image"] });
         });
     };
     MainResult.prototype.componentWillReceiveProps = function (props) {
@@ -36099,9 +36099,11 @@ var MainResult = /** @class */ (function (_super) {
                 maxWidth: 650
             } },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_material_ui_Card__["CardMedia"], null,
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { src: "../static/assets/images/img-12.jpg", alt: "" })),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { src: this.state.image, alt: "" })),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_material_ui_Card__["CardTitle"], { title: this.props.recipeName }),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_material_ui_Card__["CardText"], null, this.state.searchResult)));
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_material_ui_Card__["CardText"], null,
+                this.state.directions,
+                this.state.ingredients)));
     };
     return MainResult;
 }(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component));

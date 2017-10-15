@@ -12,10 +12,10 @@ export interface MainResultContainer {
 
 export default class MainResult extends React.Component<MainResultContainer> {
 
-    state: { searchResult: string }
+    state: { directions: string , ingredients: string, image : string }
     constructor(props) {
         super(props)
-        this.state = { searchResult: "none" }
+        this.state = { directions : "none" , ingredients: "none", image : "../static/assets/images/img-12.jpg"}
     }
 
 
@@ -24,7 +24,15 @@ export default class MainResult extends React.Component<MainResultContainer> {
             .then(res => {
                 //const posts = res.data.data.map(obj => obj.data);
                 console.log(res);
-                this.setState({ searchResult: "" + res.data });
+                let ingredients = "Ingredients: "
+                // for (let property in res.data["ingredients"]) {
+                //   ingredients += property +" "+ res.data["ingredients"][property]['count'] + ", ";
+                // }
+                // if (ingredients.length > 0) {
+                //   ingredients = ingredients.slice(0, ingredients.length - 1);
+                // }
+                this.setState({ directions: "Directions: " + res.data["directions"], ingredients: "Ingredients: " + res.data["ingredients"]["text"], image: "" + res.data["image"] });
+
             });
     }
 
@@ -43,11 +51,12 @@ export default class MainResult extends React.Component<MainResultContainer> {
                 }}
               >
                 <CardMedia>
-                  <img src="../static/assets/images/img-12.jpg" alt="" />
+                  <img src= {this.state.image} alt="" />
                 </CardMedia>
                 <CardTitle title= {this.props.recipeName} />
                 <CardText>
-                  {this.state.searchResult}
+                  {this.state.directions}
+                  {this.state.ingredients}
                 </CardText>
               </Card>
             );
