@@ -1,14 +1,13 @@
-# npcompete
+# Recipe Revealer
+
 Hackathon Project for HackGT
 
-Recipe Revealer
+### Steps Run Recipe Revealer
 
-## Steps Run Recipe Revealer
-
-### 1) cd into the Applications folder of the flask-dashboard directory
-### 2)compile with npm run build
-### 3)start the Flask app with python app.py
+#### 1) cd into the Applications folder of the flask-dashboard directory
+#### 2)compile with npm run build
+#### 3)start the Flask app with python app.py
 
 
-## Check out our Devpost
-### https://devpost.com/software/recipe-revealer
+### Check out our Devpost
+#### https://devpost.com/software/recipe-revealer
